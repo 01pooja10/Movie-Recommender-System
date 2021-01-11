@@ -50,6 +50,10 @@ if option=='Welcome':
     st.write('A user based collaborative filtering algorithm has been used to recommend movies similar to the input provided by the user.')
     st.write('Here, the movies are recommended using the Nearest Neighbors clustering algorithm.')
     st.write('The similarity metric used is cosine similarity which calculates the angle between 2 movie vectors.')
+    st.write('The different genres of movies in our database is shown below: ')
+    st.image('data/pie1.jpg')
+    st.write('The number of ratings given for each category i.e. on a scale of 0-5 is represented as a histogram: ')
+    st.image('data/hist.jpg')
 elif option=='Get recommendations':
     st.subheader('Recommendation system')
     st.write("Welcome. The options shown below are for your reference. Enter any movie's name to get recommendations.")
