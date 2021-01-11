@@ -4,7 +4,8 @@ from sklearn.neighbors import NearestNeighbors
 import streamlit as st
 import fuzzywuzzy
 from fuzzywuzzy import process
-combined=pd.read_csv('combined.csv')
+combined=pd.read_csv(r'data/combined.csv')
+knn = pickle.load(open('knnpickle_file', 'rb'))
 menu = ['Welcome', 'Get recommendations']
 st.sidebar.beta_expander("Menu", expanded=False)
 option = st.selectbox('Choose', menu)
@@ -14,6 +15,7 @@ def recommend(moviename):
     for i in range(len(idx)):
         print(i+1,' -> ',idx[i][0])
     inp=st.number_input('Choose one option to get recommendations: ')
+    inp=int(inp)
     print('Movie chosen by you: ',idx[inp][0])
     x=idx[inp][2]
     print('Found at index: ',x)
