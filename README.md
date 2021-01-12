@@ -22,6 +22,9 @@ Any dataset with different movies, their genres, cast, etc. is present and recom
 An image of the working Streamlit app:
 ![st_app](images/app.jpg)
 
+Image of algorithm's recommendations for the movie Thor:
+![recommendations](images/recc.jpg)
+
 # Some drawbacks
 Collaborative filtering doesn't make expected or personalized recommendations. It doesn't have any clue as to what genre the movie belongs to or why the user likes that particular movie. It merely follows prescribed mathematical guidelines to establish and print recommendations.
 
