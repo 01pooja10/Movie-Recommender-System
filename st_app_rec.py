@@ -28,8 +28,8 @@ def recommend_cf(moviename):
             inp=n
     #inp= [x for x in range(len(options)) if options[x]==inp1]
     print(inp)
-    st.write('Movie chosen by you: ',idx[inp+1][0])
-    x=idx[inp+1][2]
+    st.write('Movie chosen by you: ',idx[inp][0])
+    x=idx[inp][2]
     #st.write('Found at index: ',x)
 
     dist,ind=knn.kneighbors(csr_mat[x],n_neighbors=10)
