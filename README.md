@@ -9,5 +9,7 @@ Here, the movies are recommended using 2 different approaches:
 
 How does collaborative filtering work?
 A large dataset consisting of different movies and their details, is used as a reference for predicting what other movies the user might enjoy watching.
+The algorithm used here is based on unsupervised clustering of movies according to their cosine similarities.
 
 How does content based filtering work?
+A dataset with different movies, their genres, cast, etc. is present and recommendations are picked by the algorithm based on the value of similarity between the user's input and movies in the table.
