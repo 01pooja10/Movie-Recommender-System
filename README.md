@@ -20,7 +20,7 @@ How does content based filtering work?
 Any dataset with different movies, their genres, cast, etc. is present and recommendations are picked by the algorithm based on the value of similarity between the user's input and the description of pre-existing movies in the database.
 
 An image of the working Streamlit app:
-![st_app](images\app.jpg)
+![st_app](images/app.jpg)
 
 # Some drawbacks
 Collaborative filtering doesn't make expected or personalized recommendations. It doesn't have any clue as to what genre the movie belongs to or why the user likes that particular movie. It merely follows prescribed mathematical guidelines to establish and print recommendations.
