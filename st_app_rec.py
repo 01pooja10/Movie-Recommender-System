@@ -115,12 +115,12 @@ st.markdown(html, unsafe_allow_html=True)
 menu = ['Welcome', 'Collaborative filtering','Content based filtering']
 with st.sidebar.beta_expander('Menu',expanded=False):
     option = st.selectbox('Choose', menu)
-
+c1,c2=st.beta_columns(2)
 
 if option=='Welcome':
     st.title('FILM RECOMMENDATION SYSTEM')
     st.subheader('Movie recommendation system which uses 2 different approaches to recommend movies similar to one that the user enters.')
-    st.image('images/img1.jpg')
+    c1.image('images/img1.jpg',use_column_width=True)
     st.write('A user based collaborative filtering algorithm as well as a content based algorithm have been used to recommend movies similar to the input provided by the user.')
     st.write('Here, the movies are recommended using - Nearest Neighbors clustering algorithm or the similarity score.')
     st.write('The Nearest Neighbors clustering algorithm is an unsupervised algorithm which finds training samples nearest to the input using specified distance metric.')
