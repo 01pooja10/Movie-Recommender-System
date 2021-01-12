@@ -8,13 +8,13 @@ import fuzzywuzzy
 from fuzzywuzzy import process
 combined=pd.read_csv(r'data/combined.csv')
 knn = pickle.load(open('model/knnpickle_file', 'rb'))
-
 df=combined.pivot_table(values='rating',columns='userId',index='title').fillna(0)
-
 csr_mat=csr_matrix(df.values)
 #print(csr_mat)
 #csr_mat.shape
 
+rev=pd.read_csv('rev.csv')
+sim=np.loadtxt('similarity.txt')
 
 menu = ['Welcome', 'Recommendations-Collaborative filtering','Recommendations-Content based filtering']
 
