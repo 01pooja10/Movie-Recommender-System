@@ -16,11 +16,6 @@ csr_mat=csr_matrix(df.values)
 #csr_mat.shape
 
 
-
-menu = ['Welcome', 'Recommendations-Collaborative filtering','Recommendations-Content based filtering']
-
-option = st.sidebar.selectbox('Choose', menu)
-
 def recommend_cf(moviename):
     idx=process.extractBests(moviename,combined['title'])
     st.write('Movies found: ')
@@ -103,6 +98,23 @@ def recommend_cont(film):
         l1=l1[1:11]
         mov_idx=[x[0] for x in l1]
         st.write(df['movie_title'].iloc[mov_idx])
+
+
+html = """
+	<style>
+	.sidebar .sidebar-content {
+		background-image: linear-gradient(#33ccff 0%, #ff99ff 100%);
+		color: white;
+	}
+	</style>
+	"""
+st.markdown(html, unsafe_allow_html=True)
+
+
+menu = ['Welcome', 'Recommendations-Collaborative filtering','Recommendations-Content based filtering']
+with st.sidebar.beta_expander('Menu',expanded=False):
+    option = st.selectbox('Choose', menu)
+
 
 if option=='Welcome':
     st.title('FILM RECOMMENDATION SYSTEM')
