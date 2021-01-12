@@ -135,7 +135,7 @@ elif option=='Collaborative filtering':
     st.write('The number of ratings given for each category i.e. on a scale of 0-5 is represented as a count plot: ')
     st.image('images/hist.jpg')
     st.write("The options shown below are for your reference. Enter any movie to view the model's recommendations.")
-    st.write('Choose from the list of 4 moviesto get respective recommendations.')
+    st.write('Choose from the list of 4 movies (which are also recommendations) to get detailed and interesting recommendations.')
     name=st.text_input('Enter the name of a movie and get recommendations instantaneously.')
     recommend_cf(name)
 
@@ -148,5 +148,5 @@ elif option=='Content based filtering':
     st.image('images/pie2.jpg')
     st.write('The image below represents the number of movies present in various genres.')
     st.image('images/count1.jpg')
-    film=st.text_input('Enter the name of a movie and get recommendations instantaneously.')
+    film=st.text_input('Enter the exact name of any movie and get recommendations instantaneously.')
     recommend_cont(film)
