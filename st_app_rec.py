@@ -111,37 +111,40 @@ html = """
 st.markdown(html, unsafe_allow_html=True)
 
 
-menu = ['Welcome', 'Recommendations-Collaborative filtering','Recommendations-Content based filtering']
+menu = ['Welcome', 'Collaborative filtering','Content based filtering']
 with st.sidebar.beta_expander('Menu',expanded=False):
     option = st.selectbox('Choose', menu)
 
 
 if option=='Welcome':
     st.title('FILM RECOMMENDATION SYSTEM')
-    st.subheader('Collaborative filtering based movie recommendation system.')
+    st.subheader('Movie recommendation system which uses 2 different approaches to recommend movies similar to one that the user enters.')
     st.image('images/img1.jpg')
-    st.write('A user based collaborative filtering algorithm has been used to recommend movies similar to the input provided by the user.')
-    st.write('Here, the movies are recommended using the Nearest Neighbors clustering algorithm.')
-    st.write('The similarity metric used is cosine similarity which calculates the angle between 2 movie vectors.')
+    st.write('A user based collaborative filtering algorithm as well as a content based algorithm have been used to recommend movies similar to the input provided by the user.')
+    st.write('Here, the movies are recommended using - Nearest Neighbors clustering algorithm or the similarity score.')
+    st.write('The Nearest Neighbors clustering algorithm is an unsupervised algorithm which finds training samples nearest to the input using specified distance metric.')
+    st.write('The similarity metric used in both cases is called cosine similarity which calculates the similarity in the cosine angle between 2 movie vectors in space.')
+    st.write('The cosine similarity is preferred over euclidean distance as it takes the angle into account. So this means that even if 2 data points are placed far apart distance-wise, the angle between the 2 can be taken into consideration.')
+    st.write('2 different recommendation algorithms have been provided as options for the user to choose from. Depending on which one they pick, respective recommendations will be made.')
 
-
-elif option=='Recommendations-Collaborative filtering':
+elif option=='Collaborative filtering':
     st.subheader('Collaborative filtering - Recommendations')
-    st.write('Recommendations based on user similarity and nearest neighbors algorithm for clustering similar movies.')
-    st.write('The different genres of movies in our database is shown below: ')
+    st.write('Recommendations are based on ratings given by users with similar tastes and the nearest neighbors algorithm suggests similar movies.')
+    st.write('A pie chart representing the different popular genres of movies in the database is shown below: ')
     st.image('images/pie1.jpg')
-    st.write('The number of ratings given for each category i.e. on a scale of 0-5 is represented as a histogram: ')
+    st.write('The number of ratings given for each category i.e. on a scale of 0-5 is represented as a count plot: ')
     st.image('images/hist.jpg')
-    st.write("The options shown below, are for your reference. Enter any movie's name to get respective recommendations.")
+    st.write("The options shown below are for your reference. Enter any movie to view the model's recommendations.")
+    st.write('Choose from the list of 4 moviesto get respective recommendations.')
     name=st.text_input('Enter the name of a movie and get recommendations instantaneously.')
     recommend_cf(name)
 
-elif option=='Recommendations-Content based filtering':
-    st.subheader('Collaborative filtering - Recommendations')
-    st.write('Recommendations based on plot, genre, cast and director. It makes use of various information given in the dataset to make recommendations')
-    st.write('The image below represents the various ratings assigned to different genres.')
+elif option=='Content based filtering':
+    st.subheader('Content based filtering - Recommendations')
+    st.write('Recommendations are based on plot, genre, cast and director. It makes use of various information given in the dataset to make recommendations by converting such words into vectors using Term Frequency-Inverse Document Frequency method.')
+    st.write('The plot below (referred to as the box plot) represents the various range of ratings assigned to different genres.')
     st.image('images/genres2.jpg')
-    st.write('The image below represents a pie chart based representation of the 10 most popular genres.')
+    st.write('The diagram below represents a pie chart based representation of the 10 most popular genres.')
     st.image('images/pie2.jpg')
     st.write('The image below represents the number of movies present in various genres.')
     st.image('images/count1.jpg')
