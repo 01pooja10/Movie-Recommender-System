@@ -73,6 +73,7 @@ df['movie_title'][4]=df['movie_title'][4][:-12]
 #df.head()
 
 df['movie_title'].value_counts().sort_values(ascending=False)
+df.drop_duplicates(subset='movie_title',inplace=True)
 #df['genres'].value_counts()
 
 df['cast']=df['actor_1_name']+' '+df['actor_2_name']+' '+df['actor_3_name']
