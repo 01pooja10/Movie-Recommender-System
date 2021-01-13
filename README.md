@@ -25,6 +25,10 @@ An image of the working Streamlit app:
 Image of algorithm's recommendations for the movie Thor:
 ![recommendations](images/recc.jpg)
 
+# Link to the app
+View the working application, deployed on heroku, and try it out for yourself here:
+https://recommender-system-for-movies.herokuapp.com/
+
 # Some drawbacks
 Collaborative filtering doesn't make expected or personalized recommendations. It doesn't have any clue as to what genre the movie belongs to or why the user likes that particular movie. It merely follows prescribed mathematical guidelines to establish and print recommendations.
 
